@@ -277,7 +277,7 @@ public class OVRLint : EditorWindow
 			}, null, "Fix");
 		}
 
-#if UNITY_5_4_OR_NEWER
+#if false
 		// Should we recommend this?  Seems to be mutually exclusive w/ dynamic batching.
 		if (!PlayerSettings.graphicsJobs)
 		{
@@ -559,7 +559,7 @@ public class OVRLint : EditorWindow
 
 		if (UnityEngine.VR.VRSettings.renderScale > 1.5)
 		{
-			AddFix ("Optimize Render Scale", "For CPU performance, please don't use render scale over 1.5.", delegate(UnityEngine.Object obj, bool last, int selected)
+			AddFix ("Optimize Render Scale", "For GPU performance, please don't use render scale over 1.5.", delegate(UnityEngine.Object obj, bool last, int selected)
 			{
 				UnityEngine.VR.VRSettings.renderScale = 1.5f;
 			}, null, "Fix");

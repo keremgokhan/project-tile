@@ -48,7 +48,6 @@ class OVRMoonlightLoader
 		EditorApplication.update += EnforceVRSupport;
 		EditorApplication.update += EnforceInstallLocation;
 		EditorApplication.update += EnforcePlayerPrefs;
-		EditorApplication.update += EnforceMultiview;
 
 		setPrefsForUtilities = PlayerPrefs.GetInt(prefName, 1) != 0;
 
@@ -211,24 +210,6 @@ class OVRMoonlightLoader
 		}
 
 		Menu.SetChecked(menuItemName, setPrefsForUtilities);
-	}
-
-	private static void EnforceMultiview()
-	{
-		var overlays = GameObject.FindObjectsOfType<OVROverlay>();
-
-#if UNITY_ANDROID
-#if UNITY_5_5_OR_NEWER
-		bool isMultiviewEnabled = (PlayerSettings.stereoRenderingPath == StereoRenderingPath.Instancing);
-#else
-		bool isMultiviewEnabled = PlayerSettings.singlePassStereoRendering;
-#endif
-#else
-		bool isMultiviewEnabled = false;
-#endif
-
-		for (int i = 0; i < overlays.Length; ++i)
-			overlays[i].isMultiviewEnabled = isMultiviewEnabled;
 	}
 
 	private class Axis

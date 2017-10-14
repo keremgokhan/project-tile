@@ -2648,7 +2648,7 @@ public static class OVRInput
 		public override void ConfigureButtonMap()
 		{
 			buttonMap.None                     = RawButton.None;
-			buttonMap.One                      = RawButton.Start;
+			buttonMap.One                      = RawButton.LTouchpad;
 			buttonMap.Two                      = RawButton.Back;
 			buttonMap.Three                    = RawButton.None;
 			buttonMap.Four                     = RawButton.None;
@@ -2685,7 +2685,7 @@ public static class OVRInput
 		public override void ConfigureTouchMap()
 		{
 			touchMap.None                      = RawTouch.None;
-			touchMap.One                       = RawTouch.None;
+			touchMap.One                       = RawTouch.LTouchpad;
 			touchMap.Two                       = RawTouch.None;
 			touchMap.Three                     = RawTouch.None;
 			touchMap.Four                      = RawTouch.None;
@@ -2749,7 +2749,7 @@ public static class OVRInput
 			buttonMap.Back                     = RawButton.Back;
 			buttonMap.PrimaryShoulder          = RawButton.None;
 			buttonMap.PrimaryIndexTrigger      = RawButton.LIndexTrigger;
-			buttonMap.PrimaryHandTrigger       = RawButton.None;
+			buttonMap.PrimaryHandTrigger       = RawButton.LHandTrigger;
 			buttonMap.PrimaryThumbstick        = RawButton.None;
 			buttonMap.PrimaryThumbstickUp      = RawButton.None;
 			buttonMap.PrimaryThumbstickDown    = RawButton.None;
@@ -2778,11 +2778,11 @@ public static class OVRInput
 		public override void ConfigureTouchMap()
 		{
 			touchMap.None                      = RawTouch.None;
-			touchMap.One                       = RawTouch.None;
+			touchMap.One                       = RawTouch.LTouchpad;
 			touchMap.Two                       = RawTouch.None;
 			touchMap.Three                     = RawTouch.None;
 			touchMap.Four                      = RawTouch.None;
-			touchMap.PrimaryIndexTrigger       = RawTouch.None;
+			touchMap.PrimaryIndexTrigger       = RawTouch.LIndexTrigger;
 			touchMap.PrimaryThumbstick         = RawTouch.None;
 			touchMap.PrimaryThumbRest          = RawTouch.None;
 			touchMap.PrimaryTouchpad           = RawTouch.LTouchpad;
@@ -2804,8 +2804,8 @@ public static class OVRInput
 		public override void ConfigureAxis1DMap()
 		{
 			axis1DMap.None                     = RawAxis1D.None;
-			axis1DMap.PrimaryIndexTrigger      = RawAxis1D.None;
-			axis1DMap.PrimaryHandTrigger       = RawAxis1D.None;
+			axis1DMap.PrimaryIndexTrigger      = RawAxis1D.LIndexTrigger;
+			axis1DMap.PrimaryHandTrigger       = RawAxis1D.LHandTrigger;
 			axis1DMap.SecondaryIndexTrigger    = RawAxis1D.None;
 			axis1DMap.SecondaryHandTrigger     = RawAxis1D.None;
 		}
@@ -2915,7 +2915,7 @@ public static class OVRInput
 			buttonMap.Back                     = RawButton.Back;
 			buttonMap.PrimaryShoulder          = RawButton.None;
 			buttonMap.PrimaryIndexTrigger      = RawButton.RIndexTrigger;
-			buttonMap.PrimaryHandTrigger       = RawButton.None;
+			buttonMap.PrimaryHandTrigger       = RawButton.RHandTrigger;
 			buttonMap.PrimaryThumbstick        = RawButton.None;
 			buttonMap.PrimaryThumbstickUp      = RawButton.None;
 			buttonMap.PrimaryThumbstickDown    = RawButton.None;
@@ -2944,11 +2944,11 @@ public static class OVRInput
 		public override void ConfigureTouchMap()
 		{
 			touchMap.None                      = RawTouch.None;
-			touchMap.One                       = RawTouch.None;
+			touchMap.One                       = RawTouch.RTouchpad;
 			touchMap.Two                       = RawTouch.None;
 			touchMap.Three                     = RawTouch.None;
 			touchMap.Four                      = RawTouch.None;
-			touchMap.PrimaryIndexTrigger       = RawTouch.None;
+			touchMap.PrimaryIndexTrigger       = RawTouch.RIndexTrigger;
 			touchMap.PrimaryThumbstick         = RawTouch.None;
 			touchMap.PrimaryThumbRest          = RawTouch.None;
 			touchMap.PrimaryTouchpad           = RawTouch.RTouchpad;
@@ -2970,8 +2970,8 @@ public static class OVRInput
 		public override void ConfigureAxis1DMap()
 		{
 			axis1DMap.None                     = RawAxis1D.None;
-			axis1DMap.PrimaryIndexTrigger      = RawAxis1D.None;
-			axis1DMap.PrimaryHandTrigger       = RawAxis1D.None;
+			axis1DMap.PrimaryIndexTrigger      = RawAxis1D.RIndexTrigger;
+			axis1DMap.PrimaryHandTrigger       = RawAxis1D.RHandTrigger;
 			axis1DMap.SecondaryIndexTrigger    = RawAxis1D.None;
 			axis1DMap.SecondaryHandTrigger     = RawAxis1D.None;
 		}

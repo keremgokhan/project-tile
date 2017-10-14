@@ -328,4 +328,27 @@ public class OVRCameraRig : MonoBehaviour
 
 		return anchor;
 	}
+
+	public Matrix4x4 ComputeTrackReferenceMatrix()
+	{
+		if (centerEyeAnchor == null)
+		{
+			Debug.LogError("centerEyeAnchor is required");
+			return Matrix4x4.identity;
+		}
+
+		// The ideal approach would be using UnityEngine.VR.VRNode.TrackingReference, then we would not have to depend on the OVRCameraRig. Unfortunately, it is not available in Unity 5.4.3
+
+		OVRPose headPose;
+		headPose.position = UnityEngine.VR.InputTracking.GetLocalPosition(UnityEngine.VR.VRNode.Head);
+		headPose.orientation = UnityEngine.VR.InputTracking.GetLocalRotation(UnityEngine.VR.VRNode.Head);
+
+		OVRPose invHeadPose = headPose.Inverse();
+		Matrix4x4 invHeadMatrix = Matrix4x4.TRS(invHeadPose.position, invHeadPose.orientation, Vector3.one);
+
+		Matrix4x4 ret = centerEyeAnchor.localToWorldMatrix * invHeadMatrix;
+
+		return ret;
+	}
+
 }
